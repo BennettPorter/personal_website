@@ -15,10 +15,66 @@
          and graduated summa cum laude from the University of Massachusetts Lowell. 
         I am currently looking for work, and am interested in data and back-end work.</div>
     </div>
-    <img class="ml-20" src="res/selfie1.jpg" alt="Selfie" width="294" height="221">
+    <img class="ml-20 mt-4" src="res/selfie1.jpg" alt="Selfie" width="294" height="221">
 </div>
 
 <!--Experience Section-->
+<div class="flex">
+    <div>
+        <div class="text-white font-mono text-4xl ml-12 mt-30">Experience</div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Computer Science Tutor @ UML</div>
+            <input type="radio" name="experience" id= "tutor" checked="" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Software Intern @ Semcasting</div>
+            <input type="radio" name="experience" id= "semcasting" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Research Intern @ UML HRI Lab</div>
+            <input type="radio" name="experience" id= "hri" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Lifeguard @ DCR</div>
+            <input type="radio" name="experience" id= "dcr" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+    </div>
+    <div>
+        <img id="experience_image" class="ml-40 mt-10" src="res/tutoring.webp" alt="Tutoring Center Logo" width="478" height="121">
+        <ul id="experience_list" class="list-disc list-inside ml-40 mt-4 text-white font-mono text-xl">
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
+        <script>
+            // Get references
+            const experience_radios = document.querySelectorAll('input[name="experience"]');
+            const experience_image = document.getElementById('experience_image');
 
+            // Listen for changes
+            experience_radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.id === 'tutor') {
+                    experience_image.src="res/tutoring.webp";
+                    experience_image.width="478";
+                    experience_image.height="121";
+                } else if (radio.id === 'semcasting') {
+                    experience_image.src="res/semcasting.webp";
+                    experience_image.width="474";
+                    experience_image.height="61";
+                } else if (radio.id === 'hri') {
+                    experience_image.src="res/hri.png";
+                    experience_image.width="167";
+                    experience_image.height="106";
+                } else {
+                    experience_image.src="res/dcr.webp";
+                    experience_image.width="237";
+                    experience_image.height="128";
+                }
+            });
+            });
+        </script>
+    </div>
+</div>
 </body>
 </html>
