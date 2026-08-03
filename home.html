@@ -39,17 +39,18 @@
             <input type="radio" name="experience" id= "dcr" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
         </div>
     </div>
-    <div>
+    <div class="max-w-2/3 max-h-1">
         <img id="experience_image" class="ml-40 mt-10" src="res/tutoring.webp" alt="Tutoring Center Logo" width="478" height="121">
         <ul id="experience_list" class="list-disc list-inside ml-40 mt-4 text-white font-mono text-xl">
-            <li>First item</li>
-            <li>Second item</li>
-            <li>Third item</li>
+            <li>Feb 2025 - Apr 2025</li>
+            <li>Assisted students with programming with C++, Assembly, and Microcode.</li>
+            <li>Aided students with homework, projects, and studying for exams.</li>
         </ul>
         <script>
             // Get references
             const experience_radios = document.querySelectorAll('input[name="experience"]');
             const experience_image = document.getElementById('experience_image');
+            const experience_text = document.getElementById('experience_list');
 
             // Listen for changes
             experience_radios.forEach(radio => {
@@ -58,18 +59,135 @@
                     experience_image.src="res/tutoring.webp";
                     experience_image.width="478";
                     experience_image.height="121";
+                    experience_text.children[0].textContent = "Feb 2025 - Apr 2025";
+                    experience_text.children[1].textContent = "Assisted students with programming with C++, Assembly, and Microcode.";
+                    experience_text.children[2].textContent = "Aided students with homework, projects, and studying for exams.";
+                    while (experience_text.children.length > 3) {
+                        experience_text.removeChild(experience_text.children[3]);
+                    }
                 } else if (radio.id === 'semcasting') {
                     experience_image.src="res/semcasting.webp";
                     experience_image.width="474";
                     experience_image.height="61";
+                    experience_text.children[0].textContent = "May 2024 - Aug 2024";
+                    experience_text.children[1].textContent = "Improved database efficiency by writing and optimizing SQL queries.";
+                    experience_text.children[2].textContent = "Automated data management tasks using Python scripts to retrieve or update table information.";
+                    while (experience_text.children.length < 5) {
+                        const newItem = document.createElement("li");
+                        experience_text.appendChild(newItem);
+                    }
+                    experience_text.children[3].textContent = "Analyzed and organized large datasets, identifying opportunities for enhanced utilization.";
+                    experience_text.children[4].textContent = "Collaborated with a development team through weekly progress and strategy meetings.";
                 } else if (radio.id === 'hri') {
                     experience_image.src="res/hri.png";
                     experience_image.width="167";
                     experience_image.height="106";
+                    experience_text.children[0].textContent = "May 2023 - Aug 2023";
+                    experience_text.children[1].textContent = "Developed 2D image processing and 3D mapping algorithms using C++ and Python to detect a checkerboard in dynamic environments.";
+                    experience_text.children[2].textContent = "Worked with ROS to program a robot for spatial recognition and object detection.";
+                    while (experience_text.children.length < 5) {
+                        const newItem = document.createElement("li");
+                        experience_text.appendChild(newItem);
+                    }
+                    experience_text.children[3].textContent = "Utilized planar segmentation and Point Cloud Library for precise 3D space analysis.";
+                    experience_text.children[4].textContent = "Delivered a technical report and presentation of findings to peers and faculty members.";
                 } else {
                     experience_image.src="res/dcr.webp";
                     experience_image.width="237";
                     experience_image.height="128";
+                    experience_text.children[0].textContent = "Jun 2025 - Aug 2025";
+                    experience_text.children[1].textContent = "Maintained watch and kept order of pool with upwards of 130 clients in an active and chaotic environment.";
+                    experience_text.children[2].textContent = "Worked in conjunction with fellow guards to ensure safety standards and regulations were met at all times.";
+                    if (experience_text.children.length < 4) {
+                        const newItem = document.createElement("li");
+                        experience_text.appendChild(newItem);
+                    } else if (experience_text.children.length > 4) {
+                        experience_text.removeChild(experience_text.children[4]);
+                    }
+                    experience_text.children[3].textContent = "Worked closely with clientele to perform job, assisting them with various needs when required.";
+                }
+            });
+            });
+        </script>
+    </div>
+</div>
+<div class="flex">
+    <div>
+        <div class="text-white font-mono text-4xl ml-12 mt-30">Projects</div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Personal Website</div>
+            <input type="radio" name="project" id= "website" checked="" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Crunch Time</div>
+            <input type="radio" name="project" id= "crunch" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Academic Managment Portal</div>
+            <input type="radio" name="project" id= "dbms" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
+        </div>
+    </div>
+    <div class="max-w-2/3 max-h-1 mt-35">
+        <ul id="project_list" class="list-disc list-inside ml-40 mt-4 text-white font-mono text-xl">
+            <li><a href="https://github.com/BennettPorter/personal_website/" class="underline">Repository Link</a></li>
+            <li>Personal portfolio website to showcase myself and my experience/projects.</li>
+            <li>Made using HTML, TailwindCSS, and embedded Javascript, hosted using TBD.</li>
+        </ul>
+        <script>
+            // Get references
+            const project_radios = document.querySelectorAll('input[name="project"]');
+            //const project_image = document.getElementById('project_image');
+            const project_text = document.getElementById('project_list');
+
+            // Listen for changes
+            project_radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.id === 'website') {
+                    while (project_text.children[0].children.length > 0) {
+                        project_text.children[0].removeChild(project_text.children[0].children[0]);
+                    }
+                    const link = document.createElement('a');
+                    link.setAttribute('href', "https://github.com/BennettPorter/personal_website/");
+                    link.innerText = "Repository Link";
+                    project_text.children[0].appendChild(link);
+                    project_text.children[0].classList.add("underline");
+                    project_text.children[1].textContent = "Personal portfolio website to showcase myself and my experience/projects.";
+                    project_text.children[2].textContent = "Made using HTML, TailwindCSS, and embedded Javascript, hosted using TBD.";
+                    while (project_text.children.length > 3) {
+                        project_text.removeChild(project_text.children[3]);
+                    }
+                } else if (radio.id === 'crunch') {
+                    while (project_text.children[0].children.length > 0) {
+                        project_text.children[0].removeChild(project_text.children[0].children[0]);
+                    }
+                    const link = document.createElement('a');
+                    link.setAttribute('href', "https://www.cjcocokrisp.dev/");
+                    link.innerText = "Repository Link";
+                    project_text.children[0].appendChild(link);
+                    project_text.children[0].classList.add("underline");
+                    project_text.children[1].textContent = "React Native mobile app, worked on team of 4, platform for students to connect with one another to meet up on campus to study.";
+                    project_text.children[2].textContent = "Worked primarily with backend, setting up Firebase DB and JSON and connecting it to the frontend.";
+                    while (project_text.children.length < 4) {
+                        const newItem = document.createElement("li");
+                        project_text.appendChild(newItem);
+                    }
+                    project_text.children[3].textContent = "Made using Firebase, JSON, Database, React Native/Typescript.";
+                } else {
+                    while (project_text.children[0].children.length > 0) {
+                        project_text.children[0].removeChild(project_text.children[0].children[0]);
+                    }
+                    const link = document.createElement('a');
+                    link.setAttribute('href', "https://play.pokemonshowdown.com/");
+                    link.innerText = "Repository Link";
+                    project_text.children[0].appendChild(link);
+                    project_text.children[0].classList.add("underline");
+                    project_text.children[1].textContent = "Mock DB system for college management, worked on team of 2.";
+                    project_text.children[2].textContent = "Created an HTML and Android mobile version, connects to self hosted DB through SQL and PHP.";
+                    if (project_text.children.length < 4) {
+                        const newItem = document.createElement("li");
+                        project_text.appendChild(newItem);
+                    }
+                    project_text.children[3].textContent = "Made using HTML, Java, PHP, SQL, Android Studio, Threading, XAMPP.";
                 }
             });
             });
