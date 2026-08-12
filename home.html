@@ -128,6 +128,11 @@
         </div>
     </div>
     <div class="max-w-2/3 max-h-1 mt-35">
+        <div class="flex">
+            <img id="project_image_1" class="ml-40 mt-10 hidden" src="" alt="First image for projects" width="478" height="121">
+            <img id="project_image_2" class="ml-10 mt-10 hidden" src="" alt="Second image for projects" width="478" height="121">
+            <img id="project_image_3" class="ml-10 mt-10 hidden" src="" alt="Third image for projects" width="478" height="121">
+        </div>
         <ul id="project_list" class="list-disc list-inside ml-40 mt-4 text-white font-mono text-xl">
             <li><a href="https://github.com/BennettPorter/personal_website/" class="underline">Repository Link</a></li>
             <li>Personal portfolio website to showcase myself and my experience/projects.</li>
@@ -136,13 +141,16 @@
         <script>
             // Get references
             const project_radios = document.querySelectorAll('input[name="project"]');
-            //const project_image = document.getElementById('project_image');
+            const project_image1 = document.getElementById('project_image_1');
+            const project_image2 = document.getElementById('project_image_2');
+            const project_image3 = document.getElementById('project_image_3');
             const project_text = document.getElementById('project_list');
 
             // Listen for changes
             project_radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 if (radio.id === 'website') {
+                    project_text.children[0].textContent = "";
                     while (project_text.children[0].children.length > 0) {
                         project_text.children[0].removeChild(project_text.children[0].children[0]);
                     }
@@ -153,6 +161,9 @@
                     project_text.children[0].classList.add("underline");
                     project_text.children[1].textContent = "Personal portfolio website to showcase myself and my experience/projects.";
                     project_text.children[2].textContent = "Made using HTML, TailwindCSS, and embedded Javascript, hosted using TBD.";
+                    project_image1.classList.add("hidden");
+                    project_image2.classList.add("hidden");
+                    project_image3.classList.add("hidden");
                     while (project_text.children.length > 3) {
                         project_text.removeChild(project_text.children[3]);
                     }
@@ -160,38 +171,88 @@
                     while (project_text.children[0].children.length > 0) {
                         project_text.children[0].removeChild(project_text.children[0].children[0]);
                     }
+                    /*
                     const link = document.createElement('a');
                     link.setAttribute('href', "https://www.cjcocokrisp.dev/");
                     link.innerText = "Repository Link";
                     project_text.children[0].appendChild(link);
                     project_text.children[0].classList.add("underline");
-                    project_text.children[1].textContent = "React Native mobile app, worked on team of 4, platform for students to connect with one another to meet up on campus to study.";
-                    project_text.children[2].textContent = "Worked primarily with backend, setting up Firebase DB and JSON and connecting it to the frontend.";
+                    */
+                    project_text.children[0].textContent = "React Native mobile app, worked on team of 4, platform for students to connect with one another to meet up on campus to study.";
+                    project_text.children[0].classList.remove("underline");
+                    project_text.children[1].textContent = "Worked primarily with backend, setting up Firebase DB and JSON and connecting it to the frontend.";
+                    project_text.children[2].textContent = "Made using Firebase, JSON, Database, React Native/Typescript.";
                     while (project_text.children.length < 4) {
                         const newItem = document.createElement("li");
                         project_text.appendChild(newItem);
                     }
-                    project_text.children[3].textContent = "Made using Firebase, JSON, Database, React Native/Typescript.";
+                    project_text.children[3].textContent = "Screenshots show the various screens of the Android app.";
+                    project_image1.src="res/ct_ss1.jpg";
+                    project_image1.width="169";
+                    project_image1.height="362";
+                    project_image1.classList.remove("hidden");
+                    project_image2.src="res/ct_ss2.jpg";
+                    project_image2.width="169";
+                    project_image2.height="362";
+                    project_image2.classList.remove("hidden");
+                    project_image3.src="res/ct_ss3.jpg";
+                    project_image3.width="169";
+                    project_image3.height="362";
+                    project_image3.classList.remove("hidden");
                 } else {
                     while (project_text.children[0].children.length > 0) {
                         project_text.children[0].removeChild(project_text.children[0].children[0]);
                     }
+                    /*
                     const link = document.createElement('a');
                     link.setAttribute('href', "https://play.pokemonshowdown.com/");
                     link.innerText = "Repository Link";
                     project_text.children[0].appendChild(link);
                     project_text.children[0].classList.add("underline");
-                    project_text.children[1].textContent = "Mock DB system for college management, worked on team of 2.";
-                    project_text.children[2].textContent = "Created an HTML and Android mobile version, connects to self hosted DB through SQL and PHP.";
-                    if (project_text.children.length < 4) {
+                    */
+                    project_text.children[0].textContent = "Mock DB system for college management, worked on team of 2.";
+                    project_text.children[0].classList.remove("underline");
+                    project_text.children[1].textContent = "Created an HTML and Android mobile version, connects to self hosted DB through SQL and PHP.";
+                    project_text.children[2].textContent = "Made using HTML, Java, PHP, SQL, Android Studio, Threading, XAMPP.";
+                    while (project_text.children.length < 4) {
                         const newItem = document.createElement("li");
                         project_text.appendChild(newItem);
                     }
-                    project_text.children[3].textContent = "Made using HTML, Java, PHP, SQL, Android Studio, Threading, XAMPP.";
+                    project_text.children[3].textContent = "Screenshots 1 and 2 show some screens from the HTML version of the app, while screenshot 3 shows a screen from the Android version.";
+                    project_image1.src="res/db_ss1.png";
+                    project_image1.width="194";
+                    project_image1.height="369";
+                    project_image1.classList.remove("hidden");
+                    project_image2.src="res/db_ss2.png";
+                    project_image2.width="245";
+                    project_image2.height="210";
+                    project_image2.classList.remove("hidden");
+                    project_image3.src="res/db_ss3.png";
+                    project_image3.width="150";
+                    project_image3.height="261";
+                    project_image3.classList.remove("hidden");
                 }
             });
             });
         </script>
+    </div>
+</div>
+<div class="flex">
+    <div>
+        <div class="text-white font-mono text-4xl ml-12 mt-30">Contact</div>
+        <div class="text-white font-mono text-xl ml-12 mt-4">Email me at: bennettporter74@gmail.com</div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">Github: </div>
+            <a href="https://github.com/BennettPorter/" class=" ml-4 mt-2 inline-flex items-center justify-center w-8 h-8 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition">
+                <img src="res/GitHub_Invertocat_Black_Clearspace.svg" class="justify-center" alt="Github Icon" />
+            </a>
+        </div>
+        <div class="flex">
+            <div class="text-white font-mono text-xl ml-12 mt-4">LinkedIn: </div>
+            <a href="https://www.linkedin.com/in/bennettporter04/" class=" ml-4 mt-2 inline-flex items-center justify-center w-8 h-8 rounded-md bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 transition">
+                <img src="res/InBug-Black.png" class="justify-center w-7" alt="LinkedIn Icon" />
+            </a>
+        </div>
     </div>
 </div>
 </body>
