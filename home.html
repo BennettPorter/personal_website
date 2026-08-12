@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
 </head>
+<!--Header/NavBar-->
+<header class="bg-transparent shadow sticky top-0 z-50 pointer-events-none">
+    <div class="max-w-7xl mx-auto px-4 flex justify-end items-center h-16">
+    <nav class="hidden md:flex space-x-6">
+    <a href="#About" class="text-white hover:text-zinc-300 pointer-events-auto">About</a>
+    <a href="#Experience" class="text-white hover:text-zinc-300 pointer-events-auto">Experience</a>
+    <a href="#Projects" class="text-white hover:text-zinc-300 pointer-events-auto">Projects</a>
+    <a href="#Contact" class="text-white hover:text-zinc-300 pointer-events-auto">Contact</a>
+    <a href="./resume.html" class="inline-flex items-center justify-center rounded-md bg-transparent text-white hover:text-zinc-300 transition pointer-events-auto">Resume</a>
+    </nav>
+    </div>
+</header>
 <body class="block bg-zinc-800 min-h-screen relative max-w-screen overflow-x-hidden">
 <!--About Section-->
 <div class="flex">
     <div>
-        <div class="text-white font-mono text-4xl ml-12 mt-6">About</div>
+        <div id="About" class="text-white font-mono text-4xl ml-12 mt-6">About</div>
         <div class="text-white font-mono text-xl w-128 ml-12 mt-4">I am a software engineer in Massachusetts
          and graduated summa cum laude from the University of Massachusetts Lowell. 
         I am currently looking for work, and am interested in data and back-end work.</div>
@@ -21,7 +33,7 @@
 <!--Experience Section-->
 <div class="flex">
     <div>
-        <div class="text-white font-mono text-4xl ml-12 mt-30">Experience</div>
+        <div id="Experience" class="text-white font-mono text-4xl ml-12 mt-30">Experience</div>
         <div class="flex">
             <div class="text-white font-mono text-xl ml-12 mt-4">Computer Science Tutor @ UML</div>
             <input type="radio" name="experience" id= "tutor" checked="" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
@@ -47,12 +59,10 @@
             <li>Aided students with homework, projects, and studying for exams.</li>
         </ul>
         <script>
-            // Get references
             const experience_radios = document.querySelectorAll('input[name="experience"]');
             const experience_image = document.getElementById('experience_image');
             const experience_text = document.getElementById('experience_list');
 
-            // Listen for changes
             experience_radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 if (radio.id === 'tutor') {
@@ -111,9 +121,10 @@
         </script>
     </div>
 </div>
+<!--Projects Section-->
 <div class="flex">
     <div>
-        <div class="text-white font-mono text-4xl ml-12 mt-30">Projects</div>
+        <div id="Projects" class="text-white font-mono text-4xl ml-12 mt-30">Projects</div>
         <div class="flex">
             <div class="text-white font-mono text-xl ml-12 mt-4">Personal Website</div>
             <input type="radio" name="project" id= "website" checked="" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
@@ -139,14 +150,12 @@
             <li>Made using HTML, TailwindCSS, and embedded Javascript, hosted using TBD.</li>
         </ul>
         <script>
-            // Get references
             const project_radios = document.querySelectorAll('input[name="project"]');
             const project_image1 = document.getElementById('project_image_1');
             const project_image2 = document.getElementById('project_image_2');
             const project_image3 = document.getElementById('project_image_3');
             const project_text = document.getElementById('project_list');
 
-            // Listen for changes
             project_radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 if (radio.id === 'website') {
@@ -171,22 +180,19 @@
                     while (project_text.children[0].children.length > 0) {
                         project_text.children[0].removeChild(project_text.children[0].children[0]);
                     }
-                    /*
                     const link = document.createElement('a');
-                    link.setAttribute('href', "https://www.cjcocokrisp.dev/");
+                    link.setAttribute('href', "https://github.com/BennettPorter/Crunch-Time-Public");
                     link.innerText = "Repository Link";
                     project_text.children[0].appendChild(link);
                     project_text.children[0].classList.add("underline");
-                    */
-                    project_text.children[0].textContent = "React Native mobile app, worked on team of 4, platform for students to connect with one another to meet up on campus to study.";
-                    project_text.children[0].classList.remove("underline");
-                    project_text.children[1].textContent = "Worked primarily with backend, setting up Firebase DB and JSON and connecting it to the frontend.";
-                    project_text.children[2].textContent = "Made using Firebase, JSON, Database, React Native/Typescript.";
-                    while (project_text.children.length < 4) {
+                    project_text.children[1].textContent = "React Native mobile app, worked on team of 4, platform for students to connect with one another to meet up on campus to study.";
+                    project_text.children[2].textContent = "Worked primarily with backend, setting up Firebase DB and JSON and connecting it to the frontend.";
+                    while (project_text.children.length < 5) {
                         const newItem = document.createElement("li");
                         project_text.appendChild(newItem);
                     }
-                    project_text.children[3].textContent = "Screenshots show the various screens of the Android app.";
+                    project_text.children[3].textContent = "Made using Firebase, JSON, Database, React Native/Typescript.";
+                    project_text.children[4].textContent = "Screenshots show the various screens of the Android app.";
                     project_image1.src="res/ct_ss1.jpg";
                     project_image1.width="169";
                     project_image1.height="362";
@@ -203,22 +209,19 @@
                     while (project_text.children[0].children.length > 0) {
                         project_text.children[0].removeChild(project_text.children[0].children[0]);
                     }
-                    /*
                     const link = document.createElement('a');
-                    link.setAttribute('href', "https://play.pokemonshowdown.com/");
+                    link.setAttribute('href', "https://github.com/BennettPorter/Academic-Management-Portal");
                     link.innerText = "Repository Link";
                     project_text.children[0].appendChild(link);
                     project_text.children[0].classList.add("underline");
-                    */
-                    project_text.children[0].textContent = "Mock DB system for college management, worked on team of 2.";
-                    project_text.children[0].classList.remove("underline");
-                    project_text.children[1].textContent = "Created an HTML and Android mobile version, connects to self hosted DB through SQL and PHP.";
-                    project_text.children[2].textContent = "Made using HTML, Java, PHP, SQL, Android Studio, Threading, XAMPP.";
-                    while (project_text.children.length < 4) {
+                    project_text.children[1].textContent = "Mock DB system for college management, worked on team of 2.";
+                    project_text.children[2].textContent = "Created an HTML and Android mobile version, connects to self hosted DB through SQL and PHP.";
+                    while (project_text.children.length < 5) {
                         const newItem = document.createElement("li");
                         project_text.appendChild(newItem);
                     }
-                    project_text.children[3].textContent = "Screenshots 1 and 2 show some screens from the HTML version of the app, while screenshot 3 shows a screen from the Android version.";
+                    project_text.children[3].textContent = "Made using HTML, Java, PHP, SQL, Android Studio, Threading, XAMPP.";
+                    project_text.children[4].textContent = "Screenshots 1 and 2 show some screens from the HTML version of the app, while screenshot 3 shows a screen from the Android version.";
                     project_image1.src="res/db_ss1.png";
                     project_image1.width="194";
                     project_image1.height="369";
@@ -237,9 +240,10 @@
         </script>
     </div>
 </div>
+<!--Contact Section-->
 <div class="flex">
     <div>
-        <div class="text-white font-mono text-4xl ml-12 mt-30">Contact</div>
+        <div id="Contact" class="text-white font-mono text-4xl ml-12 mt-30">Contact</div>
         <div class="text-white font-mono text-xl ml-12 mt-4">Email me at: bennettporter74@gmail.com</div>
         <div class="flex">
             <div class="text-white font-mono text-xl ml-12 mt-4">Github: </div>
