@@ -21,7 +21,7 @@
 <body class="block bg-zinc-800 min-h-screen relative max-w-screen overflow-x-hidden">
 <!--About Section-->
 <div class="flex">
-    <div>
+    <div class="rounded-md bg-zinc-700">
         <div id="About" class="text-white font-mono text-4xl ml-12 mt-6">About</div>
         <div class="text-white font-mono text-xl w-128 ml-12 mt-4">I am a software engineer in Massachusetts
          and graduated summa cum laude from the University of Massachusetts Lowell. 
@@ -122,9 +122,9 @@
     </div>
 </div>
 <!--Projects Section-->
-<div class="flex">
-    <div>
-        <div id="Projects" class="text-white font-mono text-4xl ml-12 mt-30">Projects</div>
+<div class="flex mt-30">
+    <div class="rounded-md bg-zinc-700 pr-2">
+        <div id="Projects" class="text-white font-mono text-4xl ml-12">Projects</div>
         <div class="flex">
             <div class="text-white font-mono text-xl ml-12 mt-4">Personal Website</div>
             <input type="radio" name="project" id= "website" checked="" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
@@ -138,16 +138,16 @@
             <input type="radio" name="project" id= "dbms" class="w-3 h-3 mt-6 ml-3 bg-gray-100 border-gray-300 focus:ring-blue-500">
         </div>
     </div>
-    <div class="max-w-2/3 max-h-1 mt-35">
+    <div class="max-w-2/3 max-h-1 mt-5 -pl-2">
         <div class="flex">
             <img id="project_image_1" class="ml-40 mt-10 hidden" src="" alt="First image for projects" width="478" height="121">
             <img id="project_image_2" class="ml-10 mt-10 hidden" src="" alt="Second image for projects" width="478" height="121">
             <img id="project_image_3" class="ml-10 mt-10 hidden" src="" alt="Third image for projects" width="478" height="121">
         </div>
         <ul id="project_list" class="list-disc list-inside ml-40 mt-4 text-white font-mono text-xl">
-            <li><a href="https://github.com/BennettPorter/personal_website/" class="underline">Repository Link</a></li>
+            <li><a href="https://github.com/BennettPorter/BennettPorter.github.io" class="underline">Repository Link</a></li>
             <li>Personal portfolio website to showcase myself and my experience/projects.</li>
-            <li>Made using HTML, TailwindCSS, and embedded Javascript, hosted using TBD.</li>
+            <li>Made using HTML, TailwindCSS, and embedded Javascript, hosted using GitHub Pages.</li>
         </ul>
         <script>
             const project_radios = document.querySelectorAll('input[name="project"]');
@@ -241,9 +241,9 @@
     </div>
 </div>
 <!--Contact Section-->
-<div class="flex">
+<div class="flex mt-30">
     <div>
-        <div id="Contact" class="text-white font-mono text-4xl ml-12 mt-30">Contact</div>
+        <div id="Contact" class="text-white font-mono text-4xl ml-12">Contact</div>
         <div class="text-white font-mono text-xl ml-12 mt-4">Email me at: bennettporter74@gmail.com</div>
         <div class="flex">
             <div class="text-white font-mono text-xl ml-12 mt-4">Github: </div>
